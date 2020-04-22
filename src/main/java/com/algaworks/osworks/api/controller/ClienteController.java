@@ -23,6 +23,6 @@ public class ClienteController {
 	
 	@GetMapping("/clientes")
 	public List<Cliente> listar() {
-		return clienteRepository.findByNome("Jinbei");
+		return clienteRepository.findByNomeContaining("Law");
 	}
 }
