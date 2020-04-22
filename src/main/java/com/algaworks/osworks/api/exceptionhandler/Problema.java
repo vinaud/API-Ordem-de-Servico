@@ -1,13 +1,42 @@
 package com.algaworks.osworks.api.exceptionhandler;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Problema {
 
 	private Integer status;
 	private LocalDateTime dataHora;
 	private String titulo;
-	
+	private List<Campo> campos;
+    
+	public static class Campo {
+		
+		
+		public Campo(String nome, String mensagem) {
+			super();
+			this.nome = nome;
+			this.mensagem = mensagem;
+		}
+		private String nome;
+		private String mensagem;
+		
+		public String getNome() {
+			return nome;
+		}
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+		public String getMensagem() {
+			return mensagem;
+		}
+		public void setMensagem(String mensagem) {
+			this.mensagem = mensagem;
+		}
+	}
+		
+		
+
 	public Integer getStatus() {
 		return status;
 	}
@@ -26,6 +55,15 @@ public class Problema {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	public List<Campo> getCampos() {
+		return campos;
+	}
+	public void setCampos(List<Campo> campos) {
+		this.campos = campos;
+	}
+	
 	
 	
 }
+
+
