@@ -15,15 +15,15 @@ Além disso é possível cadastrar comentários para cada ordem de serviço disp
 
 ### Cadastro de clientes
 
-'POST localhost:8080/clientes/'
+`POST localhost:8080/clientes/`
 
 Envia um JSON com as informações do cliente a ser cadastrado:
 
-"""javascript
+```javascript
 {
 	"nome": "Kozuki Oden",
 	"email": "oden@gmail.com",
 	"telefone": "88 90987644"
 }
 
-"""
+```
