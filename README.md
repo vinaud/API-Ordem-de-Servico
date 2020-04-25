@@ -17,7 +17,7 @@ Além disso é possível cadastrar comentários para cada ordem de serviço disp
 
 `POST localhost:8080/clientes/`
 
-Envia um JSON com as informações do cliente a ser cadastrado:
+Envia no body um JSON com as informações do cliente a ser cadastrado:
 
 ```javascript
 {
@@ -27,3 +27,39 @@ Envia um JSON com as informações do cliente a ser cadastrado:
 }
 
 ```
+### Listagem de clientes
+
+`GET localhost:8080/clientes/`
+
+Recebe um JSON com a listagem dos clientes cadastrados:
+
+```javascript
+[
+    {
+        "id": 1,
+        "nome": "Trafalgar D. Water Law",
+        "telefone": "11 987654321",
+        "email": "trao@gmail.com"
+    },
+    {
+        "id": 2,
+        "nome": "Jinbei",
+        "telefone": "99 98765443",
+        "email": "jinbei@gmail.com"
+    },
+    {
+        "id": 3,
+        "nome": "Lord Kozuki Oden",
+        "telefone": "88 954545454",
+        "email": "oden@gmail.com"
+    }
+]
+
+```
+
+### Busca de cliente
+
+
+## Ordens de serviço
+
+## Comentários
