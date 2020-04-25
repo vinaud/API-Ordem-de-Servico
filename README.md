@@ -27,6 +27,30 @@ Envia no body um JSON com as informações do cliente a ser cadastrado:
 }
 
 ```
+Se o email informado já tiver sido usado recebe como resposta:
+
+```javascript
+{
+    "status": 400,
+    "dataHora": "2020-04-25T17:26:44.796-03:00",
+    "titulo": "Já existe um usuário cadastrado com esse e-mail"
+}
+
+```
+
+Se o cadastro for concluido com sucesso recebe a seguinte resposta:
+
+```javascript
+{
+    "id": 3,
+    "nome": "Kozuki Oden3",
+    "telefone": "88 90987644",
+    "email": "oden@gmail.com"
+}
+
+```
+
+
 ### Listagem de clientes
 
 `GET localhost:8080/clientes/`
