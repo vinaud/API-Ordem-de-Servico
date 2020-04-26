@@ -281,10 +281,59 @@ Envia como parâmtro da requisição o id da ordem de serviço a ser buscada. Ca
 }
 ```
 
-Caso ela não exista, recebe com respsota status 404 - Not Found.
+Caso ela não exista, recebe como respsota status 404 - Not Found.
 
 ## Comentários
 
-###
+### Cadastrar Comentário
 
-###
+`POST localhost:8080/ordens-servico/{id da ordem de serviço}/comentarios`
+
+Passa como parâmetro da requisição o id da ordem de serviço a qual o comentário estará associado. Envia um JSON com a descrição do comentário:
+
+```JSON
+{
+    "descricao": "placa-mae foi consertada"
+}
+```
+
+Recebe como resposta um JSON com as informações cadastradas:
+
+```JSON
+{
+    "id": 3,
+    "descricao": "placa-mae foi consertada",
+    "dataEnvio": "2020-04-26T16:26:43.43-03:00"
+}
+```
+
+### Listar Comentários
+
+`GET localhost:8080/ordens-servico/{id da ordem de serviço}/comentarios`
+
+Passa como parâmetro o id da ordem de seriço da qual gostaria de recuperar os comentários. Recebe como resposta um JSOn com os comentários encontrados, associados a respectiva ordem de serviço:
+
+```JSON
+[
+    {
+        "id": 6,
+        "descricao": "placa-mae foi consertada",
+        "dataEnvio": "2020-04-26T16:29:05-03:00"
+    },
+    {
+        "id": 7,
+        "descricao": "Tela funcionando",
+        "dataEnvio": "2020-04-26T16:29:30-03:00"
+    }
+ ]
+```
+
+Caso a ordem de serviço referente não exista, recebe um JSON como resposta:
+
+```JSON
+{
+    "status": 404,
+    "dataHora": "2020-04-26T16:32:44.901-03:00",
+    "titulo": "Ordem de serviço não encontrada"
+}
+```
