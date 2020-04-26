@@ -108,7 +108,7 @@ Passa como paramêtro da chamada o id do cliente a ser atualizado. Envia um JSON
 ```javascript
 {
     "nome": "Lord Kozuki Oden",
-    "email": "oden@gmail.com",
+    "email": "odennew@gmail.com",
     "telefone": "88 954545454"
 }
 
@@ -128,6 +128,10 @@ Caso o cliente não exista, recebe um status 404 - Not Found como resposta.
 ### Deletar Cliente
 
 `DELETE localhost:8080/clientes/{id do cliente}`
+
+Passa como paramêtro da chamada o id do cliente a ser removiddo do sistema.
+Recebe um status 204 - No Content caso a operação seja um sucesso.
+Recebe um status 404 - Not Found caso o usuário já não exista
 
 
 ## Ordens de serviço
