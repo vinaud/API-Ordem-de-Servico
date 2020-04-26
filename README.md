@@ -84,6 +84,7 @@ Recebe um JSON com a listagem dos clientes cadastrados:
 ### Busca de cliente
 
 `GET localhost:8080/clientes/{id do cliente}`
+
 Passa como paramêtro da chamada o id do cliente a ser buscado. Recebe um JSON na resposta caso o cliente do respectivo id seja encontrado:
 
 ```javascript
@@ -97,6 +98,36 @@ Passa como paramêtro da chamada o id do cliente a ser buscado. Recebe um JSON n
 ```
 
 Caso não haja um cliente com id passado, receberá como resposta o status 404 - Not Found
+
+### Atualização de cliente
+
+`PUT localhost:8080/clientes/{id do cliente}`
+
+Passa como paramêtro da chamada o id do cliente a ser atualizado. Envia um JSON com as informações a serem atualizadas do cliente:
+
+```javascript
+{
+    "nome": "Lord Kozuki Oden",
+    "email": "oden@gmail.com",
+    "telefone": "88 954545454"
+}
+
+```
+Recebe um JSON com os dados atualizados na resposta caso o cliente do respectivo id seja encontrado:
+
+```javascript
+{
+    "id": 9,
+    "nome": "Lord Kozuki Oden",
+    "telefone": "88 954545454",
+    "email": "odennew@gmail.com"
+}
+```
+Caso o cliente não exista, recebe um status 404 - Not Found como resposta.
+
+### Deletar Cliente
+
+`DELETE localhost:8080/clientes/{id do cliente}`
 
 
 ## Ordens de serviço
