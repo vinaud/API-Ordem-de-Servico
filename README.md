@@ -262,6 +262,26 @@ Recebe como resposta um JSON com a listagem de ordens de serviço cadastradas:
 
 ### Buscar Ordem de Serviço
 
+`GET localhost:8080/ordens-servico/{id da ordem de serviço}`
+
+Envia como parâmtro da requisição o id da ordem de serviço a ser buscada. Caso ela exista recebe uma resposta com o JSON com suas informações:
+
+```JSON
+{
+    "id": 1,
+    "cliente": {
+        "id": 2,
+        "nome": "Jinbei"
+    },
+    "descricao": "Reparo de Notebook Dell",
+    "preco": 350.50,
+    "status": "FINALIZADA",
+    "dataAbertura": "2020-04-23T09:29:19-03:00",
+    "dataFinalizacao": "2020-04-23T17:17:24-03:00"
+}
+```
+
+Caso ela não exista, recebe com respsota status 404 - Not Found.
 
 ## Comentários
 
