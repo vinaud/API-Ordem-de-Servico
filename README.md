@@ -130,10 +130,72 @@ Caso o cliente não exista, recebe um status 404 - Not Found como resposta.
 `DELETE localhost:8080/clientes/{id do cliente}`
 
 Passa como paramêtro da chamada o id do cliente a ser removiddo do sistema.
+
 Recebe um status 204 - No Content caso a operação seja um sucesso.
+
 Recebe um status 404 - Not Found caso o usuário já não exista
 
 
-## Ordens de serviço
+## Ordens de Serviço
+
+### Cadastro de ordem de serviço
+
+`POST localhost:8080/ordens-servico`
+
+Envia um JSON com as informações da ordem de serviço a ser cadastrada, assim como o id do cliente associado a ela:
+
+```javascript
+{
+	"cliente":{
+		"id": 2
+	},
+	"descricao": "Reparo de Notebook Dell 87876 ",
+	"preco": 350.50
+}
+```
+
+Recebe como resposta um JSON com os dados da ordem cadastrada:
+
+```javascript
+{
+    "id": 5,
+    "cliente": {
+        "id": 2,
+        "nome": "Jinbei"
+    },
+    "descricao": "Reparo de Notebook Dell 878765 ",
+    "preco": 350.50,
+    "status": "ABERTA",
+    "dataAbertura": "2020-04-26T16:09:21.276-03:00",
+    "dataFinalizacao": null
+}
+```
+Ao cadastrar recebe o status de ABERTA e a data de sua abertura é cadastrada.
+
+### Finalizar ordem de Serviço
+
+`PUT localhost:8080/ordens-servico/{id da ordem de serviço}/finalizacao`
+
+Passa como parâmetro da requisição o id da ordem a ser finalizada. 
+
+Se a ordem de serviço não existir ou não tiver status ABERTA, recebe um JSON com a resposta e o status 400 - Bad Request:
+
+```JSON
+{
+    "status": 400,
+    "dataHora": "2020-04-26T16:12:44.459-03:00",
+    "titulo": "Ordem de serviço não pode ser finalizada"
+}
+```
+Caso a finalização seja concluída com sucesso recebe como resposta o status 204 - No Content, a ordem de serviço passa a ter status FINALIZADA e sua data de finalização é cadastrada.
+
+### Listar Ordens de Serviço
+
+### Buscar Ordem de Serviço
+
 
 ## Comentários
+
+###
+
+###
