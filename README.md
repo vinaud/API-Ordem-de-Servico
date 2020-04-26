@@ -83,6 +83,21 @@ Recebe um JSON com a listagem dos clientes cadastrados:
 
 ### Busca de cliente
 
+`GET localhost:8080/clientes/{id do cliente}`
+Passa como paramêtro da chamada o id do cliente a ser buscado. Recebe um JSON na resposta caso o cliente do respectivo id seja encontrado:
+
+```javascript
+{
+    "id": 1,
+    "nome": "Trafalgar D. Water Law",
+    "telefone": "11 987654321",
+    "email": "trao@gmail.com"
+}
+
+```
+
+Caso não haja um cliente com id passado, receberá como resposta o status 404 - Not Found
+
 
 ## Ordens de serviço
 
