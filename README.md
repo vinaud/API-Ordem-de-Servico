@@ -191,6 +191,75 @@ Caso a finalização seja concluída com sucesso recebe como resposta o status 2
 
 ### Listar Ordens de Serviço
 
+`GET localhost:8080/ordens-servico/`
+
+Recebe como resposta um JSON com a listagem de ordens de serviço cadastradas:
+
+```JSON
+[
+    {
+        "id": 1,
+        "cliente": {
+            "id": 2,
+            "nome": "Jinbei"
+        },
+        "descricao": "Reparo de Notebook Dell",
+        "preco": 350.50,
+        "status": "FINALIZADA",
+        "dataAbertura": "2020-04-23T09:29:19-03:00",
+        "dataFinalizacao": "2020-04-23T17:17:24-03:00"
+    },
+    {
+        "id": 2,
+        "cliente": {
+            "id": 2,
+            "nome": "Jinbei"
+        },
+        "descricao": "Reparo de Notebook Dell 2",
+        "preco": 350.50,
+        "status": "ABERTA",
+        "dataAbertura": "2020-04-23T10:01:05-03:00",
+        "dataFinalizacao": null
+    },
+    {
+        "id": 3,
+        "cliente": {
+            "id": 2,
+            "nome": "Jinbei"
+        },
+        "descricao": "Reparo de Notebook Dell6",
+        "preco": 3509.50,
+        "status": "ABERTA",
+        "dataAbertura": "2020-04-23T12:43:42-03:00",
+        "dataFinalizacao": null
+    },
+    {
+        "id": 4,
+        "cliente": {
+            "id": 2,
+            "nome": "Jinbei"
+        },
+        "descricao": "Reparo de Notebook Dell 87876 ",
+        "preco": 350.50,
+        "status": "FINALIZADA",
+        "dataAbertura": "2020-04-23T13:19:04-03:00",
+        "dataFinalizacao": "2020-04-26T16:14:57-03:00"
+    },
+    {
+        "id": 5,
+        "cliente": {
+            "id": 2,
+            "nome": "Jinbei"
+        },
+        "descricao": "Reparo de Notebook Dell 878765 ",
+        "preco": 350.50,
+        "status": "ABERTA",
+        "dataAbertura": "2020-04-26T16:09:21-03:00",
+        "dataFinalizacao": null
+    }
+]
+```
+
 ### Buscar Ordem de Serviço
 
 
